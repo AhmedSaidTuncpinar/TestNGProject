@@ -31,14 +31,14 @@ public class Day19_NegativeLoginTest {
         ReusableMethods.waitFor(3);
 //        Customer email: fake@bluerentalcars.com
 //        Customer password: fakepass
-        loginPage.emailInput.sendKeys("fake@bluerentalcars.com");
+        loginPage.email.sendKeys("fake@bluerentalcars.com");
         ReusableMethods.waitFor(3);
-        loginPage.passwordInput.sendKeys("fakepass");
+        loginPage.password.sendKeys("fakepass");
         ReusableMethods.waitFor(3);
-        loginPage.loginSubmitButton.click();
+        loginPage.loginButton.click();
         ReusableMethods.waitFor(3);
 //        Error: User with email fake@bluerentalcars.com not found
-        String errorMessage = loginPage.errorMessage_incorrectEmailPass.getText();
+        String errorMessage = loginPage.errorMessage.getText();
         Assert.assertEquals(errorMessage,"User with email fake@bluerentalcars.com not found");
         ReusableMethods.getScreenshot("NegativeLoginScreenshot");
     }
@@ -59,14 +59,14 @@ public class Day19_NegativeLoginTest {
 //        Customer password: fakepass
         faker=new Faker();
         String fakeEmail = faker.internet().emailAddress();
-        loginPage.emailInput.sendKeys(fakeEmail);
+        loginPage.email.sendKeys(fakeEmail);
         ReusableMethods.waitFor(3);
-        loginPage.passwordInput.sendKeys(faker.internet().password(4,6));//fake pass 4-6 digit
+        loginPage.password.sendKeys(faker.internet().password(4,6));//fake pass 4-6 digit
         ReusableMethods.waitFor(3);
-        loginPage.loginSubmitButton.click();
+        loginPage.loginButton.click();
         ReusableMethods.waitFor(3);
 //        Error: User with email fake@bluerentalcars.com not found
-        String errorMessage = loginPage.errorMessage_incorrectEmailPass.getText();
+        String errorMessage = loginPage.emailErrorMessage.getText();
         Assert.assertEquals(errorMessage,"User with email "+fakeEmail+" not found");
         ReusableMethods.getScreenshot("NegativeLoginScreenshot");
     }
