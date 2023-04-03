@@ -12,6 +12,7 @@ public class Listeners implements ITestListener {
      */
     @Override
     public void onStart(ITestContext context) {
+
         System.out.println("onStart - Execute ONCE before ALL tests : "+context.getName());
     }
     @Override
