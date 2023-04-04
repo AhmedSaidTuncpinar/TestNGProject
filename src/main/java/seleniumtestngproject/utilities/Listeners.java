@@ -21,6 +21,7 @@ public class Listeners implements ITestListener {
     }
     @Override
     public void onTestStart(ITestResult result) {
+
         System.out.println("onTestStart - Execute ONCE before EACH @Test : "+result.getName());
     }
     @Override
