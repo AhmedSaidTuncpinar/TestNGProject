@@ -27,6 +27,7 @@ public class Listeners implements ITestListener {
     }
     @Override
     public void onTestSuccess(ITestResult result) {
+
         System.out.println("onTestSuccess - Execute AFTER EACH PASSED @Test : "+result.getName());
     }
     @Override
